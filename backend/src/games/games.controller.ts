@@ -22,5 +22,9 @@ export class WebSocketController implements OnGatewayDisconnect, OnGatewayConnec
         console.log('client disconnected:', client.id);
         this.players = this.players.filter(player => player !== client.id);
         this.server.emit('playerDisconnected', client.id);
+
+        if(this.players.length < 2) {
+            this.server.emit('playersDisconnected'); // Émettre un événement lorsque le nombre de joueurs devient inférieur à 2
+        }
     }
 }

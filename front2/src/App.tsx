@@ -1,13 +1,11 @@
-import { Homepage } from "./components/menu/Homepage";
 import { Router } from "./router/routes";
-import { Navigation } from "./components/menu/Navigation";
 
 import './style/global.css';
 
 function App() {
   
   return (
-    <main>
+    <main className="h-screen bg-gray-50">
       <Router />
     </main>
   );
